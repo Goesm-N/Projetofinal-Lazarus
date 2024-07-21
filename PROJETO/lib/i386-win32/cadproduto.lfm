@@ -1,0 +1,68 @@
+inherited CadProdutoF: TCadProdutoF
+  Left = 216
+  Height = 402
+  Top = 113
+  Width = 756
+  Caption = 'Tabela Produtos'
+  ClientHeight = 402
+  ClientWidth = 756
+  inherited PageControl1: TPageControl
+    Height = 402
+    Width = 756
+    inherited tbPesquisa: TTabSheet
+      ClientHeight = 374
+      ClientWidth = 748
+      inherited Panel2: TPanel
+        Width = 748
+        ClientWidth = 748
+        Color = clScrollBar
+        DockSite = False
+      end
+      inherited Panel1: TPanel
+        Top = 317
+        Width = 748
+        ClientWidth = 748
+        Color = clScrollBar
+        DockSite = False
+        inherited Button1: TButton
+          OnClick = Button1Click
+        end
+        inherited BtnFECHAR: TButton
+          Left = 655
+          OnClick = BtnFECHARClick
+        end
+      end
+      inherited DBGrid1: TDBGrid
+        Height = 251
+        Width = 748
+        DataSource = dsCadModelo
+      end
+    end
+    inherited tbCadastro: TTabSheet
+      ClientHeight = 374
+      ClientWidth = 748
+      inherited Panel3: TPanel
+        Top = 317
+        Width = 748
+        ClientWidth = 748
+        Color = clScrollBar
+        DockSite = False
+        inherited BtnNOVO: TButton
+          OnClick = BtnNOVOClick
+        end
+        inherited Button4: TButton
+          OnClick = Button4Click
+        end
+        inherited Button5: TButton
+          OnClick = Button5Click
+        end
+      end
+    end
+  end
+  inherited dsCadModelo: TDataSource
+    DataSet = DMF.qyrProdutos
+    OnDataChange = dsCadModeloDataChange
+    Left = 656
+    Top = 40
+  end
+end

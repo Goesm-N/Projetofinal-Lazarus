@@ -1,0 +1,87 @@
+object PesqModF: TPesqModF
+  Left = 698
+  Height = 240
+  Top = 397
+  Width = 320
+  Caption = 'PesqMod'
+  ClientHeight = 240
+  ClientWidth = 320
+  OnClose = FormClose
+  LCLVersion = '3.2.0.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 56
+    Top = 0
+    Width = 320
+    Align = alTop
+    BevelColor = clBackground
+    ClientHeight = 56
+    ClientWidth = 320
+    Color = clScrollBar
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 24
+      Height = 21
+      Top = 24
+      Width = 55
+      Caption = 'Buscar:'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -16
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Button1: TButton
+      Left = 176
+      Height = 25
+      Top = 20
+      Width = 64
+      Caption = 'BtnPesquisa'
+      TabOrder = 0
+    end
+    object Edit1: TEdit
+      Left = 88
+      Height = 23
+      Top = 22
+      Width = 80
+      Align = alCustom
+      Alignment = taCenter
+      TabOrder = 1
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 256
+      Height = 17
+      Top = 28
+      Width = 24
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 17
+      ClientWidth = 24
+      Options = []
+      TabOrder = 2
+      VisibleButtons = [nbRefresh]
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 184
+    Top = 56
+    Width = 320
+    Align = alClient
+    Color = clWindow
+    Columns = <>
+    TabOrder = 1
+  end
+  object dsPesqMod: TDataSource
+    Left = 248
+    Top = 72
+  end
+end

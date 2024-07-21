@@ -1,0 +1,570 @@
+inherited OrcamentosF: TOrcamentosF
+  Left = 592
+  Height = 523
+  Top = 219
+  Width = 1037
+  Caption = 'Orçamentos'
+  ClientHeight = 523
+  ClientWidth = 1037
+  Font.CharSet = ANSI_CHARSET
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poWorkAreaCenter
+  inherited PageControl1: TPageControl
+    Height = 523
+    Width = 1037
+    ActivePage = tbCadastro
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabIndex = 1
+    inherited tbPesquisa: TTabSheet
+      ClientHeight = 495
+      ClientWidth = 1029
+      inherited Panel2: TPanel
+        Width = 1029
+        ClientWidth = 1029
+        Color = clScrollBar
+        DockSite = False
+        inherited BtnPESQUISA: TButton
+          OnClick = BtnPESQUISAClick
+        end
+        inherited Edit1: TEdit
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          Text = ''
+        end
+      end
+      inherited Panel1: TPanel
+        Top = 438
+        Width = 1029
+        ClientWidth = 1029
+        Color = clScrollBar
+        DockSite = False
+        inherited BtnNOVO: TButton
+          OnClick = BtnNOVOClick
+        end
+        inherited BtnFECHAR: TButton
+          Left = 936
+          OnClick = BtnFECHARClick
+        end
+      end
+      inherited DBGrid1: TDBGrid
+        Height = 372
+        Width = 1029
+        AlternateColor = 14539737
+        Columns = <        
+          item
+            Alignment = taCenter
+            PickList.Strings = (            )
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'ORÇA. ID'
+            Width = 70
+            FieldName = 'orcamentoid'
+          end        
+          item
+            Alignment = taCenter
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            PickList.Strings = (            )
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'CLIENTE ID'
+            Width = 80
+            FieldName = 'clienteid'
+          end        
+          item
+            Alignment = taCenter
+            PickList.Strings = (            )
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'EMISSÃO'
+            FieldName = 'dt_orcamento'
+          end        
+          item
+            Alignment = taCenter
+            PickList.Strings = (            )
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'VENCIMENTO'
+            FieldName = 'dt_validade_orcamento'
+          end        
+          item
+            Alignment = taCenter
+            PickList.Strings = (            )
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'TOTAL'
+            FieldName = 'vl_total_orcamento'
+            DisplayFormat = '###,##0.00'
+          end>
+        DataSource = dsCadModelo
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
+        OnDblClick = DBGrid1DblClick
+      end
+    end
+    inherited tbCadastro: TTabSheet
+      ClientHeight = 495
+      ClientWidth = 1029
+      inherited Panel3: TPanel
+        Top = 438
+        Width = 1029
+        ClientWidth = 1029
+        Color = clScrollBar
+        DockSite = False
+        inherited BtnINSERIR: TButton
+          Caption = 'GRAVAR'
+          OnClick = BtnGRAVARClick
+        end
+        inherited BtnEXCLUIR: TButton
+          OnClick = BtnEXCLUIRClick
+        end
+        inherited BtnCANCELAR: TButton
+          Left = 934
+          OnClick = BtnCANCELARClick
+        end
+      end
+      inherited gbCadModelo: TGroupBox
+        Left = -4
+        Height = 16
+        Top = 0
+        Width = 79
+        Enabled = False
+        Visible = False
+      end
+      object DBGrid2: TDBGrid[2]
+        Left = 0
+        Height = 300
+        Top = 138
+        Width = 1029
+        Align = alBottom
+        AlternateColor = 14539737
+        Color = clWindow
+        Columns = <        
+          item
+            Alignment = taCenter
+            ButtonStyle = cbsNone
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'ID'
+            Width = 50
+            FieldName = 'orcamentoid'
+          end        
+          item
+            Alignment = taCenter
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'ORÇAMENTO'
+            Width = 100
+            FieldName = 'orcamentoitemid'
+          end        
+          item
+            Alignment = taCenter
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'PRODUTO ID'
+            FieldName = 'produtoid'
+          end        
+          item
+            Alignment = taCenter
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'DESCRIÇÃO'
+            Width = 150
+            FieldName = 'produtodesc'
+          end        
+          item
+            Alignment = taCenter
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'QUANTIDADE'
+            FieldName = 'qt_produto'
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'VALOR (U)'
+            FieldName = 'vl_unitario'
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'TOTAL'
+            FieldName = 'vl_total'
+          end>
+        DataSource = dsOrcItem
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 4
+      end
+      object DBEdit1: TDBEdit[3]
+        Left = 72
+        Height = 23
+        Top = 42
+        Width = 32
+        DataField = 'orcamentoid'
+        DataSource = dsCadModelo
+        Alignment = taRightJustify
+        Enabled = False
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 2
+      end
+      object DBEdit2: TDBEdit[4]
+        Left = 64
+        Height = 23
+        Top = 74
+        Width = 32
+        DataField = 'clienteid'
+        DataSource = dsCadModelo
+        Alignment = taRightJustify
+        Enabled = False
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 3
+      end
+      object Label2: TLabel[5]
+        Left = 40
+        Height = 17
+        Top = 48
+        Width = 16
+        Caption = 'ID:'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label3: TLabel[6]
+        Left = 12
+        Height = 17
+        Top = 80
+        Width = 44
+        Caption = 'Cliente:'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label4: TLabel[7]
+        Left = 360
+        Height = 17
+        Top = 80
+        Width = 121
+        Caption = 'Data do orçamento:'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label5: TLabel[8]
+        Left = 592
+        Height = 17
+        Top = 80
+        Width = 37
+        Caption = 'Prazo:'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object DBEdit3: TDBEdit[9]
+        Left = 488
+        Height = 23
+        Top = 74
+        Width = 80
+        DataField = 'dt_orcamento'
+        DataSource = dsCadModelo
+        ReadOnly = True
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 5
+      end
+      object DBEdit4: TDBEdit[10]
+        Left = 651
+        Height = 23
+        Top = 74
+        Width = 80
+        DataField = 'dt_validade_orcamento'
+        DataSource = dsCadModelo
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 6
+      end
+      object Label6: TLabel[11]
+        Left = 840
+        Height = 32
+        Top = 16
+        Width = 155
+        Caption = 'VALOR TOTAL:'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -24
+        Font.Name = 'Segoe UI Semibold'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label7: TLabel[12]
+        Left = 344
+        Height = 30
+        Top = 8
+        Width = 387
+        Alignment = taCenter
+        Caption = 'Gerenciamento de Items em orçamento'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -21
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold, fsUnderline]
+        ParentFont = False
+      end
+      object DBEdit5: TDBEdit[13]
+        Left = 824
+        Height = 32
+        Top = 48
+        Width = 176
+        DataField = 'vl_total_orcamento'
+        DataSource = dsCadModelo
+        Align = alCustom
+        Alignment = taRightJustify
+        AutoSize = False
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clGreen
+        Font.Height = -21
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 7
+      end
+      object Label9: TLabel[14]
+        Left = 16
+        Height = 1
+        Top = 104
+        Width = 1
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+      end
+      object Button3: TButton[15]
+        Left = 104
+        Height = 21
+        Top = 76
+        Width = 24
+        Caption = '...'
+        TabOrder = 8
+        OnClick = Button3Click
+      end
+      object BitBtn1: TBitBtn[16]
+        Left = 768
+        Height = 30
+        Top = 104
+        Width = 91
+        Caption = 'Inserir Item'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Glyph.Data = {
+          DE000000424DDE0000000000000076000000280000000D0000000D0000000100
+          0400000000006800000000000000000000001000000010000000000000000000
+          BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+          700077777777777770007777700077777000777770C077777000777770C07777
+          7000770000C000077000770CCCCCCC077000770000C000077000777770C07777
+          7000777770C07777700077777000777770007777777777777000777777777777
+          7000
+        }
+        OnClick = BitBtn1Click
+        ParentFont = False
+        TabOrder = 9
+      end
+      object BitBtn2: TBitBtn[17]
+        Left = 872
+        Height = 30
+        Top = 104
+        Width = 96
+        Caption = 'Excluir Item'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Glyph.Data = {
+          F6000000424DF600000000000000760000002800000010000000100000000100
+          0400000000008000000000000000000000001000000010000000000000000000
+          BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+          7777777777777777777777777777777777777777777777777777777777777777
+          7777777777777778477777444447777748777744447777777477774447777777
+          7477774474777777747777477744777748777777777744448777777777777777
+          7777777777777777777777777777777777777777777777777777
+        }
+        OnClick = BitBtn2Click
+        ParentFont = False
+        TabOrder = 10
+      end
+      object Edit2: TEdit[18]
+        Left = 136
+        Height = 15
+        Top = 80
+        Width = 184
+        BorderStyle = bsNone
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 11
+      end
+    end
+  end
+  inherited dsCadModelo: TDataSource
+    DataSet = DMF.qryOrcamentos
+    Left = 184
+    Top = 408
+  end
+  object dsOrcItem: TDataSource[2]
+    DataSet = DMF.qryOrcItem
+    Left = 104
+    Top = 408
+  end
+end

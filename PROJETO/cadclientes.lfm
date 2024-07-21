@@ -1,0 +1,336 @@
+inherited CadClientesF: TCadClientesF
+  Left = 640
+  Height = 391
+  Top = 222
+  Width = 722
+  Caption = 'Tabela Clientes'
+  ClientHeight = 391
+  ClientWidth = 722
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poWorkAreaCenter
+  inherited PageControl1: TPageControl
+    Height = 391
+    Width = 722
+    ActivePage = tbCadastro
+    TabIndex = 1
+    inherited tbPesquisa: TTabSheet
+      ClientHeight = 363
+      ClientWidth = 714
+      inherited Panel2: TPanel
+        Width = 714
+        ClientWidth = 714
+        Color = clScrollBar
+        DockSite = False
+        inherited Label1: TLabel
+          Width = 55
+          Caption = 'Buscar:'
+        end
+        inherited BtnPESQUISA: TButton
+          Left = 400
+          OnClick = BtnPesquisaClick
+        end
+        inherited Edit1: TEdit
+          Left = 224
+          Width = 160
+          Alignment = taCenter
+          Text = ''
+          TextHint = 'Digite o CPF/CNPJ do cliente'
+        end
+        object DBNavigator2: TDBNavigator[3]
+          Left = 480
+          Height = 23
+          Top = 22
+          Width = 25
+          BevelOuter = bvNone
+          ChildSizing.EnlargeHorizontal = crsScaleChilds
+          ChildSizing.EnlargeVertical = crsScaleChilds
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 100
+          ClientHeight = 23
+          ClientWidth = 25
+          DataSource = dsCadModelo
+          OnClick = DBNavigator2Click
+          Options = []
+          TabOrder = 2
+          VisibleButtons = [nbRefresh]
+        end
+        object ComboBox1: TComboBox[4]
+          Left = 104
+          Height = 23
+          Top = 22
+          Width = 100
+          ItemHeight = 15
+          Items.Strings = (
+            'ID.'
+            'CPF/CNPJ.'
+            'NOME.'
+          )
+          TabOrder = 3
+          OnChange = ComboBox1Change
+        end
+      end
+      inherited Panel1: TPanel
+        Top = 306
+        Width = 714
+        ClientWidth = 714
+        Color = clScrollBar
+        DockSite = False
+        inherited BtnNOVO: TButton
+          OnClick = BtnNOVOClick
+        end
+        inherited BtnFECHAR: TButton
+          Left = 621
+          OnClick = BtnFECHARClick
+        end
+      end
+      inherited DBGrid1: TDBGrid
+        Height = 240
+        Width = 714
+        AlternateColor = 14539737
+        Columns = <        
+          item
+            Alignment = taCenter
+            PickList.Strings = (            )
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'ID'
+            Width = 50
+            FieldName = 'clienteid'
+          end        
+          item
+            Alignment = taCenter
+            PickList.Strings = (            )
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'T.Cliente'
+            Width = 80
+            FieldName = 'tipo_cliente'
+          end        
+          item
+            Alignment = taCenter
+            PickList.Strings = (            )
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'CPF/CNPJ'
+            FieldName = 'cpf_cnpj_cliente'
+            DisplayFormat = '´999 999 999\-99;0;_´'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'Nome do Cliente'
+            Width = 250
+            FieldName = 'nome_cliente'
+          end>
+        DataSource = dsCadModelo
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
+      end
+    end
+    inherited tbCadastro: TTabSheet
+      ClientHeight = 363
+      ClientWidth = 714
+      inherited Panel3: TPanel
+        Top = 306
+        Width = 714
+        ClientWidth = 714
+        Color = clScrollBar
+        DockSite = False
+        inherited BtnINSERIR: TButton
+          Caption = 'GRAVAR'
+          OnClick = BtnINSERIRClick
+        end
+        inherited BtnEXCLUIR: TButton
+          OnClick = BtnEXCLUIRClick
+        end
+        inherited BtnCANCELAR: TButton
+          OnClick = BtnCANCELARClick
+        end
+      end
+      inherited gbCadModelo: TGroupBox
+        Left = 32
+        Height = 144
+        Top = 72
+        Width = 656
+        ClientHeight = 124
+        ClientWidth = 652
+        object Label2: TLabel[0]
+          Left = 84
+          Height = 17
+          Top = 30
+          Width = 16
+          Caption = 'ID:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Segoe UI Semibold'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label3: TLabel[1]
+          Left = 32
+          Height = 17
+          Top = 86
+          Width = 92
+          Caption = 'Tipo do cliente:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Segoe UI Semibold'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label4: TLabel[2]
+          Left = 192
+          Height = 17
+          Top = 30
+          Width = 61
+          Caption = 'CPF/CNPJ:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Segoe UI Semibold'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label5: TLabel[3]
+          Left = 232
+          Height = 15
+          Top = 88
+          Width = 93
+          Caption = 'Nome do Cliente:'
+        end
+        object DBEdtID: TDBEdit[4]
+          Left = 113
+          Height = 23
+          Top = 24
+          Width = 56
+          DataField = 'clienteid'
+          DataSource = dsCadModelo
+          ReadOnly = True
+          Alignment = taRightJustify
+          Enabled = False
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object DBEdtCPF: TDBEdit[5]
+          Left = 272
+          Height = 23
+          Top = 24
+          Width = 112
+          DataField = 'cpf_cnpj_cliente'
+          DataSource = dsCadModelo
+          Align = alCustom
+          AutoSize = False
+          MaxLength = 18
+          TabOrder = 1
+        end
+        object DBEdtNome: TDBEdit[6]
+          Left = 336
+          Height = 23
+          Top = 80
+          Width = 192
+          DataField = 'nome_cliente'
+          DataSource = dsCadModelo
+          AutoSize = False
+          MaxLength = 100
+          TabOrder = 2
+        end
+        object DBNavigator1: TDBNavigator[7]
+          Left = 400
+          Height = 25
+          Top = 6
+          Width = 241
+          BevelOuter = bvNone
+          ChildSizing.EnlargeHorizontal = crsScaleChilds
+          ChildSizing.EnlargeVertical = crsScaleChilds
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 100
+          ClientHeight = 25
+          ClientWidth = 241
+          DataSource = dsCadModelo
+          Options = []
+          TabOrder = 3
+          VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbPost, nbCancel]
+        end
+        object DBCbTCliente: TDBComboBox[8]
+          Left = 136
+          Height = 23
+          Top = 80
+          Width = 40
+          DataField = 'tipo_cliente'
+          DataSource = dsCadModelo
+          ItemHeight = 15
+          Items.Strings = (
+            'F'
+            'J'
+          )
+          MaxLength = 0
+          OnChange = DBCbTClienteChange
+          TabOrder = 4
+        end
+      end
+      object Label6: TLabel[2]
+        Left = 224
+        Height = 32
+        Top = 24
+        Width = 233
+        Caption = 'Cadastro de Clientes'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -24
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold, fsUnderline]
+        ParentFont = False
+      end
+    end
+  end
+  inherited dsCadModelo: TDataSource
+    DataSet = DMF.qryClientes
+    Left = 568
+    Top = 40
+  end
+end

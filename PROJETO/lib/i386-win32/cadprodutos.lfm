@@ -1,0 +1,477 @@
+inherited CadProdutosF: TCadProdutosF
+  Left = 634
+  Height = 496
+  Top = 188
+  Width = 812
+  Caption = 'Tabela Produtos'
+  ClientHeight = 496
+  ClientWidth = 812
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poWorkAreaCenter
+  inherited PageControl1: TPageControl
+    Height = 496
+    Width = 812
+    ActivePage = tbCadastro
+    TabIndex = 1
+    inherited tbPesquisa: TTabSheet
+      ClientHeight = 468
+      ClientWidth = 804
+      inherited Panel2: TPanel
+        Width = 804
+        ClientWidth = 804
+        Color = clScrollBar
+        DockSite = False
+        inherited Label1: TLabel
+          Width = 150
+          Caption = 'Consultar (STATUS):'
+        end
+        inherited BtnPESQUISA: TButton
+          Left = 336
+          OnClick = BtnPESQUISAClick
+        end
+        inherited Edit1: TEdit
+          Left = 200
+          Width = 120
+          Text = ''
+        end
+        object DBNavigator2: TDBNavigator[3]
+          Left = 408
+          Height = 19
+          Top = 26
+          Width = 25
+          BevelOuter = bvNone
+          ChildSizing.EnlargeHorizontal = crsScaleChilds
+          ChildSizing.EnlargeVertical = crsScaleChilds
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 100
+          ClientHeight = 19
+          ClientWidth = 25
+          DataSource = dsCadModelo
+          OnClick = DBNavigator2Click
+          Options = []
+          TabOrder = 2
+          VisibleButtons = [nbRefresh]
+        end
+      end
+      inherited Panel1: TPanel
+        Top = 411
+        Width = 804
+        ClientWidth = 804
+        Color = clScrollBar
+        DockSite = False
+        inherited BtnNOVO: TButton
+          OnClick = BtnNOVOClick
+        end
+        inherited BtnFECHAR: TButton
+          Left = 711
+          OnClick = BtnFECHARClick
+        end
+      end
+      inherited DBGrid1: TDBGrid
+        Height = 345
+        Width = 804
+        AlternateColor = 14539737
+        Columns = <        
+          item
+            Alignment = taCenter
+            PickList.Strings = (            )
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'ID'
+            Width = 50
+            FieldName = 'produtoid'
+          end        
+          item
+            Alignment = taCenter
+            PickList.Strings = (            )
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'CAT. ID'
+            Width = 60
+            FieldName = 'categoriaprodutoid'
+          end        
+          item
+            Alignment = taCenter
+            PickList.Strings = (            )
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'Descrição'
+            Width = 130
+            FieldName = 'ds_produto'
+          end        
+          item
+            Alignment = taCenter
+            PickList.Strings = (            )
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'TIPO'
+            Width = 130
+            FieldName = 'obs_produto'
+          end        
+          item
+            Alignment = taCenter
+            PickList.Strings = (            )
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'Valor de Venda'
+            Width = 130
+            FieldName = 'vl_venda_produto'
+            DisplayFormat = '0.00'
+          end        
+          item
+            Alignment = taCenter
+            Font.CharSet = ANSI_CHARSET
+            Font.Name = 'Segoe UI Semibold'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            PickList.Strings = (            )
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'Data cadastrada'
+            Width = 110
+            FieldName = 'dt_cadastro_produto'
+          end        
+          item
+            Alignment = taCenter
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            PickList.Strings = (            )
+            Title.Alignment = taCenter
+            Title.Color = clPurple
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -13
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'STATUS'
+            FieldName = 'status_produto'
+          end>
+        DataSource = dsCadModelo
+        Font.CharSet = ANSI_CHARSET
+        Font.Name = 'Segoe UI Semibold'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
+        OnDblClick = DBGrid1DblClick
+      end
+    end
+    inherited tbCadastro: TTabSheet
+      ClientHeight = 468
+      ClientWidth = 804
+      inherited Panel3: TPanel
+        Top = 411
+        Width = 804
+        ClientWidth = 804
+        Color = clScrollBar
+        DockSite = False
+        inherited BtnINSERIR: TButton
+          Caption = 'GRAVAR'
+          OnClick = BtnINSERIRClick
+        end
+        inherited BtnEXCLUIR: TButton
+          OnClick = BtnEXCLUIRClick
+        end
+        inherited BtnCANCELAR: TButton
+          Left = 708
+          OnClick = BtnCANCELARClick
+        end
+      end
+      inherited gbCadModelo: TGroupBox
+        Left = 56
+        Height = 224
+        Top = 88
+        Width = 720
+        ClientHeight = 204
+        ClientWidth = 716
+        object DBEdtID: TDBEdit[0]
+          Left = 105
+          Height = 23
+          Top = 48
+          Width = 40
+          DataField = 'produtoid'
+          DataSource = dsCadModelo
+          ReadOnly = True
+          Align = alCustom
+          Alignment = taRightJustify
+          AutoSize = False
+          Enabled = False
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object Label2: TLabel[1]
+          Left = 77
+          Height = 17
+          Top = 54
+          Width = 16
+          Caption = 'ID:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Segoe UI Semibold'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label3: TLabel[2]
+          Left = 47
+          Height = 17
+          Top = 176
+          Width = 60
+          Caption = 'Descrição:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Segoe UI Semibold'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label4: TLabel[3]
+          Left = 32
+          Height = 17
+          Top = 138
+          Width = 75
+          Caption = 'Observação:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Segoe UI Semibold'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label5: TLabel[4]
+          Left = 496
+          Height = 17
+          Top = 176
+          Width = 93
+          Caption = 'Valor de Venda:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Segoe UI Semibold'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label6: TLabel[5]
+          Left = 192
+          Height = 17
+          Top = 88
+          Width = 41
+          Caption = 'Status:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Segoe UI Semibold'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label7: TLabel[6]
+          Left = 480
+          Height = 17
+          Top = 136
+          Width = 108
+          Caption = 'Data de Cadastro:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Segoe UI Semibold'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object DBEdtDs: TDBEdit[7]
+          Left = 120
+          Height = 23
+          Top = 170
+          Width = 344
+          DataField = 'ds_produto'
+          DataSource = dsCadModelo
+          MaxLength = 50
+          TabOrder = 1
+        end
+        object DBEdtVlVenda: TDBEdit[8]
+          Left = 600
+          Height = 23
+          Top = 170
+          Width = 80
+          DataField = 'vl_venda_produto'
+          DataSource = dsCadModelo
+          Alignment = taRightJustify
+          MaxLength = 0
+          ParentBiDiMode = False
+          TabOrder = 2
+        end
+        object DBNavigator1: TDBNavigator[9]
+          Left = 392
+          Height = 32
+          Top = 24
+          Width = 256
+          BevelOuter = bvNone
+          ChildSizing.EnlargeHorizontal = crsScaleChilds
+          ChildSizing.EnlargeVertical = crsScaleChilds
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 100
+          ClientHeight = 32
+          ClientWidth = 256
+          DataSource = dsCadModelo
+          Options = []
+          TabOrder = 3
+          VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbPost, nbCancel]
+        end
+        object Label9: TLabel[10]
+          Left = 22
+          Height = 1
+          Top = 144
+          Width = 1
+        end
+        object Label10: TLabel[11]
+          Left = 16
+          Height = 17
+          Top = 88
+          Width = 78
+          Caption = 'ID Categoria:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Segoe UI Semibold'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object DBEdtIDCat: TDBEdit[12]
+          Left = 104
+          Height = 23
+          Top = 82
+          Width = 32
+          DataField = 'categoriaprodutoid'
+          DataSource = dsCadModelo
+          ReadOnly = True
+          Alignment = taRightJustify
+          MaxLength = 0
+          TabOrder = 4
+        end
+        object DBEdtObs: TDBEdit[13]
+          Left = 120
+          Height = 23
+          Top = 132
+          Width = 344
+          DataField = 'obs_produto'
+          DataSource = dsCadModelo
+          MaxLength = 50
+          TabOrder = 5
+        end
+        object Button1: TButton[14]
+          Left = 144
+          Height = 20
+          Top = 85
+          Width = 24
+          Caption = '...'
+          TabOrder = 6
+          OnClick = Button1Click
+        end
+        object DBEdtDtCad: TDBEdit[15]
+          Left = 600
+          Height = 23
+          Top = 132
+          Width = 80
+          DataField = 'dt_cadastro_produto'
+          DataSource = dsCadModelo
+          ReadOnly = True
+          MaxLength = 0
+          TabOrder = 7
+        end
+        object DBCbStatus: TDBComboBox[16]
+          Left = 248
+          Height = 23
+          Top = 82
+          Width = 100
+          DataField = 'status_produto'
+          DataSource = dsCadModelo
+          ItemHeight = 15
+          Items.Strings = (
+            'ATIVO.'
+            'INATIVO.'
+          )
+          MaxLength = 0
+          OnChange = DBCbStatusChange
+          TabOrder = 8
+        end
+      end
+      object Label8: TLabel[2]
+        Left = 272
+        Height = 32
+        Top = 32
+        Width = 248
+        Caption = 'Cadastro de Produtos'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -24
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold, fsUnderline]
+        ParentFont = False
+      end
+    end
+  end
+  inherited dsCadModelo: TDataSource
+    AutoEdit = False
+    DataSet = DMF.qryProdutos
+    Left = 712
+    Top = 32
+  end
+end

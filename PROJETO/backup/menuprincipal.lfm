@@ -1,0 +1,73 @@
+object MenuPrincipalF: TMenuPrincipalF
+  Left = 1075
+  Height = 402
+  Top = 216
+  Width = 628
+  Caption = 'Menu'
+  FormStyle = fsMDIForm
+  Menu = MainMenu1
+  LCLVersion = '3.2.0.0'
+  Visible = True
+  WindowState = wsMaximized
+  object MainMenu1: TMainMenu
+    Left = 104
+    Top = 56
+    object MnCadastros: TMenuItem
+      Caption = 'Cadastros'
+      Default = True
+      object MnCategoria: TMenuItem
+        Caption = 'Categoria'
+        OnClick = MnCategoriaClick
+      end
+      object MnCliente: TMenuItem
+        Caption = 'Cliente'
+        OnClick = MnClienteClick
+      end
+      object MnProduto: TMenuItem
+        Caption = 'Produto'
+        OnClick = MnProdutoClick
+      end
+      object Separator1: TMenuItem
+        Caption = '-'
+      end
+      object MnUsuarios: TMenuItem
+        Caption = 'Usuários'
+        OnClick = MnUsuariosClick
+      end
+    end
+    object MnVendas: TMenuItem
+      Caption = 'Vendas'
+      object MnOrcamento: TMenuItem
+        Caption = 'Orçamentos'
+        OnClick = MnOrcamentoClick
+      end
+    end
+    object MnRelatorios: TMenuItem
+      Caption = 'Relatórios'
+      object MnRClientes: TMenuItem
+        Caption = 'Clientes'
+        OnClick = MnRClientesClick
+      end
+      object MnRProdutos: TMenuItem
+        Caption = 'Produtos'
+        OnClick = MnRProdutosClick
+      end
+      object MnROrcamento: TMenuItem
+        Caption = 'Orçamento'
+        OnClick = MnROrcamentoClick
+      end
+      object MnRCategoria: TMenuItem
+        Caption = 'Categorias'
+      end
+    end
+    object MnSobre: TMenuItem
+      Caption = 'Sobre'
+      OnClick = MnSobreClick
+    end
+    object MnSair: TMenuItem
+      Caption = 'Sair'
+      ShortCut = 27
+      OnClick = MnSairClick
+    end
+  end
+end

@@ -1,0 +1,21 @@
+inherited CadProdutoF: TCadProdutoF
+  Caption = 'Tabela Produtos'
+  inherited PageControl1: TPageControl
+    inherited tbPesquisa: TTabSheet
+      inherited Panel2: TPanel
+        Color = clScrollBar
+        DockSite = False
+      end
+      inherited Panel1: TPanel
+        Color = clScrollBar
+        DockSite = False
+      end
+    end
+    inherited tbCadastro: TTabSheet
+      inherited Panel3: TPanel
+        Color = clScrollBar
+        DockSite = False
+      end
+    end
+  end
+end

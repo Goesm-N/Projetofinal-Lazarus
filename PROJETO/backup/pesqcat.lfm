@@ -1,0 +1,98 @@
+object PesqCatF: TPesqCatF
+  Left = 1265
+  Height = 227
+  Top = 260
+  Width = 345
+  Caption = 'Pesquisa de Categorias'
+  ClientHeight = 227
+  ClientWidth = 345
+  OnClose = FormClose
+  LCLVersion = '3.2.0.0'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 177
+    Top = 50
+    Width = 345
+    Align = alClient
+    AlternateColor = 14539737
+    Color = clWindow
+    Columns = <    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Color = clPurple
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Caption = 'ID'
+        Width = 50
+        FieldName = 'categoriaprodutoid'
+      end    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Color = clPurple
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Caption = 'DESCRIÇÃO'
+        Width = 120
+        FieldName = 'ds_categoria_produto'
+      end>
+    DataSource = dsPesqCat
+    ReadOnly = True
+    TabOrder = 0
+    OnDblClick = DBGrid1DblClick
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 345
+    Align = alTop
+    BevelColor = clBackground
+    ClientHeight = 50
+    ClientWidth = 345
+    Color = clScrollBar
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 16
+      Height = 17
+      Top = 24
+      Width = 117
+      Caption = 'Procurar descrição:'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -13
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Edit1: TEdit
+      Left = 144
+      Height = 23
+      Top = 18
+      Width = 80
+      TabOrder = 0
+    end
+    object BtnPesquisa: TButton
+      Left = 232
+      Height = 23
+      Top = 18
+      Width = 56
+      Caption = 'pesquisar'
+      TabOrder = 1
+      OnClick = BtnPesquisaClick
+    end
+  end
+  object dsPesqCat: TDataSource
+    AutoEdit = False
+    DataSet = DMF.qryCategoria
+    Left = 304
+    Top = 16
+  end
+end

@@ -1,0 +1,103 @@
+inherited PesqClienteF: TPesqClienteF
+  Left = 1144
+  Top = 237
+  Width = 503
+  Caption = 'Selecionar Cliente'
+  ClientWidth = 503
+  OnClose = FormClose
+  inherited Panel1: TPanel
+    Width = 503
+    ClientWidth = 503
+    Color = clScrollBar
+    DockSite = False
+    inherited Label1: TLabel
+      Width = 75
+      Caption = 'Buscar ID:'
+    end
+    inherited Button1: TButton
+      Left = 192
+      Caption = 'Pesquisar'
+      OnClick = Button1Click
+    end
+    inherited Edit1: TEdit
+      Left = 104
+    end
+    inherited DBNavigator1: TDBNavigator
+      Left = 272
+      DataSource = dsPesqMod
+      Hints.Strings = (      )
+      OnClick = DBNavigator1Click
+    end
+  end
+  inherited DBGrid1: TDBGrid
+    Width = 503
+    AlternateColor = 14342874
+    Columns = <    
+      item
+        Alignment = taCenter
+        PickList.Strings = (        )
+        Title.Alignment = taCenter
+        Title.Color = clPurple
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -13
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'ID'
+        Width = 50
+        FieldName = 'clienteid'
+      end    
+      item
+        Alignment = taCenter
+        PickList.Strings = (        )
+        Title.Alignment = taCenter
+        Title.Color = clPurple
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -13
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'T. CLIENTE'
+        FieldName = 'tipo_cliente'
+      end    
+      item
+        Alignment = taCenter
+        PickList.Strings = (        )
+        Title.Alignment = taCenter
+        Title.Color = clPurple
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -13
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'CPF/CNPJ'
+        Width = 130
+        FieldName = 'cpf_cnpj_cliente'
+      end    
+      item
+        Alignment = taCenter
+        PickList.Strings = (        )
+        Title.Alignment = taCenter
+        Title.Color = clPurple
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -13
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'NOME'
+        Width = 200
+        FieldName = 'nome_cliente'
+      end>
+    DataSource = dsPesqMod
+    OnDblClick = DBGrid1DblClick
+  end
+  inherited dsPesqMod: TDataSource
+    DataSet = DMF.qryClientes
+    Left = 320
+    Top = 8
+  end
+end

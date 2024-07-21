@@ -1,0 +1,22 @@
+inherited RelClienteF: TRelClienteF
+  Left = 1217
+  Top = 207
+  Caption = 'RelCliente'
+  OnShow = FormShow
+  inherited Button1: TButton
+    OnClick = Button1Click
+  end
+  inherited qryRelMod: TZQuery
+    SQL.Strings = (
+      'select * from cliente'
+    )
+  end
+  object frReport1: TfrReport[3]
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbLoad, pbSave, pbPrint, pbFind, pbHelp, pbExit, pbSettings, pbPageSetup]
+    DataType = dtDataSet
+    Left = 16
+    Top = 48
+  end
+end

@@ -1,0 +1,150 @@
+inherited PesqProdF: TPesqProdF
+  Left = 1074
+  Top = 204
+  Width = 850
+  Caption = 'Inserir Produto'
+  ClientWidth = 850
+  inherited Panel1: TPanel
+    Width = 850
+    ClientWidth = 850
+    Color = clScrollBar
+    DockSite = False
+    inherited Label1: TLabel
+      Width = 87
+      Caption = 'ID produto:'
+    end
+    inherited Button1: TButton
+      Left = 208
+      Caption = 'Pequisar'
+      OnClick = Button1Click
+    end
+    inherited Edit1: TEdit
+      Left = 120
+      Hint = 'Informe um ID.'
+      ParentShowHint = False
+    end
+    inherited DBNavigator1: TDBNavigator
+      Left = 280
+      Top = 24
+      DataSource = dsPesqMod
+      Hints.Strings = (      )
+      OnClick = DBNavigator1Click
+    end
+  end
+  inherited DBGrid1: TDBGrid
+    Width = 850
+    Columns = <    
+      item
+        Alignment = taCenter
+        PickList.Strings = (        )
+        Title.Alignment = taCenter
+        Title.Color = clPurple
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -13
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'ID'
+        Width = 50
+        FieldName = 'produtoid'
+      end    
+      item
+        Alignment = taCenter
+        ButtonStyle = cbsEllipsis
+        PickList.Strings = (        )
+        Title.Alignment = taCenter
+        Title.Color = clPurple
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -13
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'CATEGORIA ID'
+        Width = 100
+        FieldName = 'categoriaprodutoid'
+      end    
+      item
+        Alignment = taCenter
+        PickList.Strings = (        )
+        Title.Alignment = taCenter
+        Title.Color = clPurple
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -13
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'DESCRIÇÃO'
+        Width = 130
+        FieldName = 'ds_produto'
+      end    
+      item
+        Alignment = taCenter
+        PickList.Strings = (        )
+        Title.Alignment = taCenter
+        Title.Color = clPurple
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -13
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'OBSERVAÇÃO'
+        Width = 150
+        FieldName = 'obs_produto'
+      end    
+      item
+        PickList.Strings = (        )
+        Title.Alignment = taCenter
+        Title.Color = clPurple
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -13
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'VALOR DE VENDA'
+        FieldName = 'vl_venda_produto'
+      end    
+      item
+        Alignment = taCenter
+        PickList.Strings = (        )
+        Title.Alignment = taCenter
+        Title.Color = clPurple
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -13
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'CADASTRADO'
+        Width = 100
+        FieldName = 'dt_cadastro_produto'
+      end    
+      item
+        Alignment = taCenter
+        PickList.Strings = (        )
+        Title.Alignment = taCenter
+        Title.Color = clPurple
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -13
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'STATUS'
+        Width = 70
+        FieldName = 'status_produto'
+      end>
+    DataSource = dsPesqMod
+    ReadOnly = True
+    OnDblClick = DBGrid1DblClick
+  end
+  inherited dsPesqMod: TDataSource
+    DataSet = DMF.qryProdutos
+    Left = 400
+    Top = 16
+  end
+end
